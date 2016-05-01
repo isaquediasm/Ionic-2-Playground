@@ -1,0 +1,20 @@
+<ion-navbar *navbar primary>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>My First List</ion-title>
+</ion-navbar>
+
+<ion-content class="card-background-page">
+  <ion-list>
+    <ion-card (click)="itemTapped($event, city)" *ngFor="#city of cities">
+      <img src="{{ city.img }}"/>
+      <div class="card-title">{{ city.name }}</div>
+      <div class="card-subtitle">32</div>
+    </ion-card>
+
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
